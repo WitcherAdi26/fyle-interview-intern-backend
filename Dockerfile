@@ -1,17 +1,29 @@
 FROM python:3.8
 
+WORKDIR /
+
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
 COPY . .
 
-RUN pip install -r requirements.txt
-
-RUN export FLASK_APP=core/server.py
+ENV FLASK_APP=core/server.py
 RUN rm core/store.sqlite3
 RUN flask db upgrade -d core/migrations/
 
-RUN pytest -vvv -s tests/
+# Testing app before creating images
+RUN pytest -vvv -s tests/ 
 
-RUN pytest --cov
+RUN rm core/store.sqlite3
+RUN flask db upgrade -d core/migrations/
 
-CMD ["python","./core/server.py"]
+# For Coverage 
+RUN pytest --cov=core /tests
 
-# CMD ["flask","run","--host=0.0.0.0","--port=4000"]
+RUN rm core/store.sqlite3
+RUN flask db upgrade -d core/migrations/
+
+EXPOSE 7755
+
+CMD ["bash","run.sh"]

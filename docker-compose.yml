@@ -1,11 +1,12 @@
-version: '3.7'
+version: '3.8'
 
 services:
-  fyle_app:
-    container_name: assignment_test
-    image: witcheradi26/assignment_test
+  app:
+    build: .
     ports:
-      "4000:4000"
-    build:
-      context: .
-      dockerfile: Dockerfile
+      - "7755:7755"
+    environment:
+      - FLASK_ENV=development
+      - FLASK_APP=core/server.py
+    volumes:
+      - .:/app
