@@ -1,3 +1,5 @@
+from core.models.assignments import AssignmentStateEnum
+
 def test_get_assignments_teacher_1(client, h_teacher_1):
     response = client.get(
         '/teacher/assignments',
@@ -99,3 +101,39 @@ def test_grade_assignment_draft_assignment(client, h_teacher_1):
     data = response.json
 
     assert data['error'] == 'FyleError'
+
+# Test to grade assignment in 'SUBMITTED' state
+def test_grade_assignment_submitted_assignment(client,h_teacher_1):
+    response = client.post(
+        '/teacher/assignments/grade',
+        headers=h_teacher_1,
+        json={
+            "id": 1,
+            "grade": "A"
+        }
+    )
+
+    assert response.status_code==200
+    data = response.json['data']
+    print(data)
+
+    assert data['grade']=='A'
+    assert data['state']==AssignmentStateEnum.GRADED
+
+# Test to grade assignment by a student which is forbidden
+def test_grade_assignment_by_student_forbidden(client,h_student_1):
+    response = client.post(
+        '/teacher/assignments/grade',
+        headers=h_student_1,
+        json={
+            "id": 1,
+            "grade": "A"
+        }
+    )
+
+    error_response = response.json
+    assert response.status_code == 403
+    assert error_response['error'] == 'FyleError'
+    assert error_response["message"] == 'requester should be a teacher'
+
+

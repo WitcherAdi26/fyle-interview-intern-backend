@@ -129,3 +129,20 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+env/
+__pycache__
+.mypy_cache
+.pytest_cache
+core/__pycache__
+core/store.sqlite3
+core/apis/__pycache__
+core/apis/assignments/__pycache__
+core/apis/teachers/__pycache__
+core/libs/__pycache__
+core/migrations/__pycache__
+core/migrations/versions/__pycache__
+core/models/__pycache__
+tests/__pycache__
+tests/SQL/__pycache__
+.coverage

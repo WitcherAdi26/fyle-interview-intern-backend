@@ -1,8 +1,9 @@
 from .exceptions import FyleError
 
-
 def base_assert(error_code, msg):
-    raise FyleError(status_code=error_code, message=msg)
+    err=FyleError(status_code=error_code, message=msg)
+    err.to_dict()
+    raise err
 
 
 def assert_auth(cond, msg='UNAUTHORIZED'):
