@@ -36,9 +36,8 @@ This is a submission for the Fyle Backend Challenge. I managed to complete all t
 
 5. To get test coverage to 94% or above.
     -> I managed to get test coverage to **97%**. Below is the screenshot of the Coverage reports.
-    ![Coverage reports upper part](<images/Coverage reports 0.png>)
-    
-    ![Coverage reports lower part](<images/Coverage reports 1.png>)
+    ![Coverage Reports upper part](<images/Coverage Reports 0.png>)
+    ![Coverage reports lower part](<images/Coverage Reports 1.png>)
 
 6. To write SQL in the count_grade_A_assignments_by_teacher_with_max_grading.sql and number_of_graded_assignments_for_each_student.sql.
     -> I wrote SQL queries for both the files and are displayed below.
