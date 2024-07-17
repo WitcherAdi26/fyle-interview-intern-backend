@@ -14,11 +14,13 @@ This is a submission for the Fyle Backend Challenge. I managed to complete all t
     GET /principal/teachers
     ![Missing API 2](<images/Missing API 2.png>)
 
+
 2. To add tests for grading API.
     -> I added 2 APIs
         - First is where teacher wants to **grade** an assignment in 'SUBMITTED' state.
         - Second is where a **student** wants to **grade** an assignment which is forbidden.
         ![Grade API tests](<images/Grade API tests.png>)
+
 
     -> I also added 4 more tests to handle edge cases which also increased coverage results.
         - Below screenshot contains the First, where student tries to **edit his assignmen**t with state 'SUBMITTED' or 'GRADED'
@@ -27,17 +29,21 @@ This is a submission for the Fyle Backend Challenge. I managed to complete all t
         ![Extra tests 2,3,4](<images/Extra tests 2,3,4.png>)
     So in total, there are **24** tests.
 
+
 3. All intentional bugs in the application, which lead to test failures, are being addressed and rectified. Please see the test Results and Coverage reports below.
+
 
 4. To make sure all the tests are passed.
     -> All the tests are passed and are displayed below.
     ![Test Results upper part](<images/Test Results 0.png>)
     ![Test Results lower part](<images/Test Results 1.png>)
 
+
 5. To get test coverage to 94% or above.
     -> I managed to get test coverage to **97%**. Below is the screenshot of the Coverage reports.
     ![Coverage Reports upper part](<images/Coverage Reports 0.png>)
     ![Coverage reports lower part](<images/Coverage Reports 1.png>)
+
 
 6. To write SQL in the count_grade_A_assignments_by_teacher_with_max_grading.sql and number_of_graded_assignments_for_each_student.sql.
     -> I wrote SQL queries for both the files and are displayed below.
@@ -46,15 +52,17 @@ This is a submission for the Fyle Backend Challenge. I managed to complete all t
     ![SQL test 2](<images/SQL test 2.png>)
     number_of_graded_assignments_for_each_student.sql
 
+
 7. Optional task was to Dockerize the application by creating a Dockerfile and a docker-compose.yml file
     -> Geven below are the screenshots of Dockerfile and docker-compose.yml
     ![Dockerfile](<images/Dockerfile.png>)
     ![docker-compose](<images/docker-compose.png>)
 
+
     Follow these steps to building and running application using Docker
     1. Clone this repository and navigate to the cloned directory using below command 
     ```console
-    git clone https://github.com/fylein/fyle-interview-intern-backend
+    git clone https://github.com/fylein/fyle-interview-intern-backend.git
     cd fyle-interview-intern-backend
     ```
     2. You need to [Install](https://www.docker.com/products/docker-desktop/) Docker Dekstop. If you already have it then run docker desktop.
