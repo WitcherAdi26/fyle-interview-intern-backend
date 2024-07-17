@@ -62,7 +62,7 @@ This is a submission for the Fyle Backend Challenge. I managed to complete all t
     Follow these steps to building and running application using Docker
     1. Clone this repository and navigate to the cloned directory using below command 
     ```console
-    git clone https://github.com/fylein/fyle-interview-intern-backend.git
+    git clone https://github.com/WitcherAdi26/fyle-interview-intern-backend.git
     cd fyle-interview-intern-backend
     ```
     2. You need to [Install](https://www.docker.com/products/docker-desktop/) Docker Dekstop. If you already have it then run docker desktop.
